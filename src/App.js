@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
-// Configure API - update this URL after deployment
 const API_URL = 'https://credit-risk-api-re8l.onrender.com';
 
 function App() {
