@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 // Configure API - update this URL after deployment
-const API_URL = 'https://creditrisk-api-re8l.onrender.com';
+const API_URL = 'https://credit-risk-api-re8l.onrender.com';
 
 function App() {
   const [formData, setFormData] = useState({
