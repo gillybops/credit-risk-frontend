@@ -64,18 +64,26 @@ function App() {
 
   if (!result) {
     return (
-      <div className="app">
-        <header className="header"><h1>Credit Risk Scoring</h1></header>
-        <main>
-          <h2>Loan Application</h2>
-          {error && <div className="alert">{error}</div>}
+      <div className="app"><div className="background-grid"></div>
+        <header className="header">
+          <div className="header-content">
+            <div className="logo">
+              <span className="logo-icon">📊</span>
+              <h1>CREDIT<span className="accent">RISK</span></h1>
+            </div>
+            <p className="subtitle">AI-Powered Loan Assessment System</p>
+          </div>
+        </header>
+        <main className="main-content">
+          <div className="application-form"><div className="form-header"><h2>Loan Application Assessment</h2><p>Enter applicant details for instant risk analysis</p></div>
+          {error && <div className="alert alert-error"><span className="alert-icon">⚠️</span><span>{error}</span></div>}
           <form onSubmit={handleSubmit}>
             <input type="number" name="applicant_income" placeholder="Income" value={formData.applicant_income} onChange={handleChange} required />
             <input type="number" name="loan_amount" placeholder="Loan" value={formData.loan_amount} onChange={handleChange} required />
             <input type="number" name="existing_debt" placeholder="Debt" value={formData.existing_debt} onChange={handleChange} required />
             <input type="number" name="credit_history_months" placeholder="Credit History" value={formData.credit_history_months} onChange={handleChange} required />
             <button type="submit">{loading ? 'Loading...' : 'Calculate'}</button>
-          </form>
+          </form></div>
         </main>
       </div>
     );
