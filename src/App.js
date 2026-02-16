@@ -52,7 +52,43 @@ function App() {
     }
   };
 
-  return <div>TEST</div>;
+  const resetForm = () => {
+    setFormData({
+      applicant_income: '', loan_amount: '', loan_term_months: '360',
+      credit_history_months: '', employment_status: 'employed',
+      property_area: 'urban', dependents: '0', education: 'graduate', existing_debt: ''
+    });
+    setResult(null);
+    setError('');
+  };
+
+  if (!result) {
+    return (
+      <div className="app">
+        <header className="header"><h1>Credit Risk Scoring</h1></header>
+        <main>
+          <h2>Loan Application</h2>
+          {error && <div className="alert">{error}</div>}
+          <form onSubmit={handleSubmit}>
+            <input type="number" name="applicant_income" placeholder="Income" value={formData.applicant_income} onChange={handleChange} required />
+            <input type="number" name="loan_amount" placeholder="Loan" value={formData.loan_amount} onChange={handleChange} required />
+            <input type="number" name="existing_debt" placeholder="Debt" value={formData.existing_debt} onChange={handleChange} required />
+            <input type="number" name="credit_history_months" placeholder="Credit History" value={formData.credit_history_months} onChange={handleChange} required />
+            <button type="submit">{loading ? 'Loading...' : 'Calculate'}</button>
+          </form>
+        </main>
+      </div>
+    );
+  }
+
+  return (
+    <div className="app">
+      <h1>Score: {result.risk_score}</h1>
+      <div>Category: {result.risk_category}</div>
+      <div>Recommendation: {result.approval_recommendation}</div>
+      <button onClick={resetForm}>New</button>
+    </div>
+  );
 }
 
 export default App;
