@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_URL = 'https://credit-risk-api-re8l.onrender.com';
+const API_URL = 'https://credit-risk-api.gilliannewton.com';
 
 function App() {
   const [formData, setFormData] = useState({
