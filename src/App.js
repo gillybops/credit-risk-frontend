@@ -63,7 +63,7 @@ function App() {
           <div className="header-content">
             <div className="logo">
               <span className="logo-icon">📊</span>
-              <h1>CREDIT<span className="accent">RISK</span></h1>
+              <h1>CREDIT<span className="accent">RISK</span> SCORING</h1>
             </div>
             <p className="subtitle">AI-Powered Loan Assessment System</p>
           </div>
